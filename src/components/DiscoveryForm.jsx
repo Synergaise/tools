@@ -494,9 +494,11 @@ export default function DiscoveryForm() {
             {currentSection < 5 ? (
               <button
                 type="button"
-                onClick={() => setCurrentSection(s => s + 1)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setCurrentSection(s => s + 1)
+                }}
                 className="flex-1 py-3 px-6 bg-gray-900 text-white font-medium rounded-lg transition-colors duration-200"
-                style={{ '--hover-bg': '#a8c5d4' }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#a8c5d4'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#111827'}
               >
