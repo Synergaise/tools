@@ -108,26 +108,11 @@ export default function DiscoveryForm() {
         {/* Header */}
         <div className="text-center mb-6">
           <div className="mb-3">
-            <svg viewBox="0 0 100 100" className="w-14 h-14 mx-auto">
-              <g transform="translate(50,50)">
-                {[...Array(48)].map((_, i) => {
-                  const angle = (i * 7.5) * Math.PI / 180
-                  const innerRadius = 14 + Math.sin(angle * 2) * 4
-                  const outerRadius = 32 + Math.sin(angle * 2) * 4
-                  return (
-                    <line
-                      key={i}
-                      x1={Math.cos(angle) * innerRadius}
-                      y1={Math.sin(angle) * innerRadius}
-                      x2={Math.cos(angle) * outerRadius}
-                      y2={Math.sin(angle) * outerRadius}
-                      stroke="#1a1a1a"
-                      strokeWidth="2.5"
-                    />
-                  )
-                })}
-              </g>
-            </svg>
+            <img
+              src="/logo.png"
+              alt="Synergaise"
+              className="w-32 h-32 mx-auto object-contain"
+            />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-1">Project Discovery Form</h1>
           <p className="text-gray-500 text-sm">Help us understand your automation needs</p>
@@ -138,7 +123,8 @@ export default function DiscoveryForm() {
           {[1, 2, 3, 4, 5].map(n => (
             <div
               key={n}
-              className={`h-1 flex-1 rounded-full ${currentSection >= n ? 'bg-gray-900' : 'bg-gray-300'}`}
+              className={`h-1 flex-1 rounded-full ${currentSection >= n ? '' : 'bg-gray-300'}`}
+              style={currentSection >= n ? { backgroundColor: '#a8c5d4' } : {}}
             />
           ))}
         </div>
@@ -509,7 +495,10 @@ export default function DiscoveryForm() {
               <button
                 type="button"
                 onClick={() => setCurrentSection(s => s + 1)}
-                className="flex-1 py-3 px-6 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800"
+                className="flex-1 py-3 px-6 bg-gray-900 text-white font-medium rounded-lg transition-colors duration-200"
+                style={{ '--hover-bg': '#a8c5d4' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#a8c5d4'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#111827'}
               >
                 Continue
               </button>
@@ -517,7 +506,9 @@ export default function DiscoveryForm() {
               <button
                 type="submit"
                 disabled={submitting}
-                className={`flex-1 py-3 px-6 font-medium rounded-lg ${submitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'} text-white`}
+                className={`flex-1 py-3 px-6 font-medium rounded-lg transition-colors duration-200 ${submitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-900'} text-white`}
+                onMouseEnter={(e) => !submitting && (e.target.style.backgroundColor = '#a8c5d4')}
+                onMouseLeave={(e) => !submitting && (e.target.style.backgroundColor = '#111827')}
               >
                 {submitting ? 'Submitting...' : 'Submit Form'}
               </button>
