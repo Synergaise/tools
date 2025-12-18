@@ -109,7 +109,7 @@ export default function DiscoveryForm() {
         <div className="text-center mb-8">
           <div className="mb-4">
             <img
-              src="/logo-circle.png"
+              src="/Circle_logo.png"
               alt="Synergaise"
               className="w-24 h-24 mx-auto"
             />
