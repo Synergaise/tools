@@ -3,7 +3,7 @@ import { useState } from 'react'
 // ============================================
 // CONFIGURATION - Update this with your webhook URL
 // ============================================
-const WEBHOOK_URL = 'YOUR_MAKE_WEBHOOK_URL_HERE'
+const WEBHOOK_URL = 'https://synergaise.app.n8n.cloud/webhook/discovery-form'
 // ============================================
 
 export default function DiscoveryForm() {
