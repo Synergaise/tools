@@ -106,12 +106,12 @@ export default function DiscoveryForm() {
     <div className="min-h-screen p-4" style={{ backgroundColor: '#f5f5f0' }}>
       <div className="max-w-xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-6">
-          <div className="mb-3">
+        <div className="text-center mb-8">
+          <div className="mb-4">
             <img
-              src="/logo.png"
+              src="/logo-circle.png"
               alt="Synergaise"
-              className="w-32 h-32 mx-auto object-contain"
+              className="w-24 h-24 mx-auto"
             />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-1">Project Discovery Form</h1>
